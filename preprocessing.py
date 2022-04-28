@@ -16,8 +16,8 @@ def normalize(data):
 
 def drop_cols(data):
     #removing unncessary columns
-    stocks=data.copy()
-    stocks.insert(0, 'Item', range(0, 0 + len(stocks)))
+    stocks=pd.DataFrame()
+    stocks=data[['Open','Close','Volume']].copy()
 
-    stocks.drop(['High', 'Low', 'Date'], axis = 1)
+    stocks.insert(0, 'Item', range(0, 0 + len(stocks)))
     return stocks
