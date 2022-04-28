@@ -16,7 +16,7 @@ def normalize(data):
 
 def drop_cols(data):
     #removing unncessary columns
-    stocks=data
+    stocks=data.copy()
     stocks.insert(0, 'Item', range(0, 0 + len(stocks)))
 
     stocks.drop(['High', 'Low', 'Date'], axis = 1)
